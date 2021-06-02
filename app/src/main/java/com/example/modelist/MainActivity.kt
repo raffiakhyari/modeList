@@ -31,10 +31,18 @@ class MainActivity : AppCompatActivity() {
         rvHeroes.adapter = listHeroAdapter
     }
 
+    //menampilan data dari mode grid list recycler view
     private fun showRecyclerGrid(){
         rvHeroes.layoutManager = GridLayoutManager(this, 2)
         val gridHeroAdapter = GridHeroAdapter(list)
         rvHeroes.adapter = gridHeroAdapter
+    }
+
+    //menampilkan data dari mode cardview list recycler view
+    private fun showRecyclerCardView(){
+        rvHeroes.layoutManager = LinearLayoutManager(this)
+        val cardViewHeroAdapter = CardViewHeroAdapter(list)
+        rvHeroes.adapter = cardViewHeroAdapter
     }
 
     //mengaktifkan menulist
@@ -59,7 +67,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             R.id.action_cardview -> {
-
+                showRecyclerCardView()
             }
         }
     }
